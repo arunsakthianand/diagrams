@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage[export]{adjustbox}
+
+\begin{document}
+
+\begin{figure}
+\begin{circuitikz} 
+
+\draw (1.03,3.5) to[short] (1.03,0.5);
+\draw (1.03,3.5) to[short] (4.03,3.5);
+\draw (4.03,3.5) to[short] (4.03,0.5);
+\draw (4.03,0.5) to[short] (1.03,0.5);
+\draw (2.5,2.5) node(anchor=west){(32,6)};
+\draw (2.5,2) node(anchor=west){code};
+\draw (2.5,2.5) node(anchor=west){(32,6)};
+\draw (2.5,2) node(anchor=west){code};
+
+\draw [arrows=->] (4.03,2) -- (5.47,2);
+
+\draw [arrows=->] (-1,3) -- (1,3);
+\draw [arrows=->] (-1,2.5) -- (1,2.5);
+\draw [arrows=->] (-1,2) -- (1,2);
+\draw [arrows=->] (-1,1.5) -- (1,1.5);
+\draw [arrows=->] (-1,1) -- (1,1);
+\draw (0,3.5) node(anchor=west){$b_1$};
+\draw (0,0.5) node(anchor=west){$b_6$};
+
+\draw (0,-0.75) node(anchor=west){$b_7$};
+
+\draw [arrows=->] (-1,-1) -- (7,-1);
+\draw (5.5,0.5) to[short] (5.5,3.5);
+\draw [arrows=->] (5.5,0.5) -- (7,0.5);
+\draw (10,3.5) to[short] (5.5,3.5);
+\filldraw (10,3.5) circle (3pt);
+\draw (8,-0.25) circle (30pt);
+\draw (8,1.4) node(anchor=west){EXOR};
+\draw (8,1.4) node(anchor=west){EXOR};
+\draw [arrows=->] (9.05,-0.25) -- (9.97,-0.25);
+
+\filldraw (11,2.5) circle (4pt);
+\draw [arrows=->] (11,2.5) -- (10.1,3.4);
+\draw [arrows=->] (11,2.5) -- (10.1,3.4);
+\draw (11,2.5) to[short] (12,2.5);
+
+\draw (10,-1) to[short] (10,0.5);
+\draw (11.5,-1) to[short] (11.5,0.5);
+\draw (11.5,-1) to[short] (10,-1);
+\draw (10,0.5) to[short] (11.5,0.5);
+\draw (10.7,0) node(anchor=west){1-bit};
+\draw (10.7,-0.5) node(anchor=west){Delay};
+
+
+\draw (11.5,-0.25) to[short] (12,-0.25);
+\filldraw (12,-0.25) circle (3pt);
+
+\draw (13,0) node(anchor=west){Parallel};
+\draw (13,-0.25) node(anchor=west){to};
+\draw (13,-0.5) node(anchor=west){serial};
+
+\draw (13.2,3.1) node(anchor=west){$(y_1,y_1Xb_7,y_2,y_2Xb_7,..,y_{\mathrm{32}}Xb_7)$};
+
+\draw (6.7,3.9) node(anchor=west){$(y_1,y_2,y_3,..,y_{\mathrm{32}})$};
+
+
+
+\end{circuitikz} 
+\end{figure}
+
+\end{document}

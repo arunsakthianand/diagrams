@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage[export]{adjustbox}
+
+\begin{document}
+
+\begin{figure}
+\begin{circuitikz}
+ \draw (0,1) to[short] (10,1);
+ \draw (0,2) to[short] (10,2);
+ \draw (0,2) to[short] (0,1);
+ \draw (10,2) to[short] (10,1);
+ \draw [arrows=<->] (0.1,0) -- (9.9,0);
+ 
+ \draw (0,-1) to[short] (0,-2); 
+ \draw (3,-1) to[short] (3,-2);
+ \draw (6,-1) to[short] (6,-2);
+ \draw (7,-1) to[short] (7,-2);
+ \draw (10,-1) to[short] (10,-2);
+ \draw (0,-2) to[short] (6,-2);
+ \draw (7,-2) to[short] (10,-2);
+ \draw (0,-1) to[short] (6,-1);
+ \draw (7,-1) to[short] (10,-1);
+ \draw [dashed] (0,1) -- (0,-1);
+ \draw [dashed] (3,1) -- (3,-1);
+ \draw [dashed] (6,1) -- (6,-1);
+ \draw [dashed] (7,1) -- (7,-1);
+ \draw [dashed] (10,1) -- (10,-1);
+ \draw [dashed] (6,-1.5) -- (7,-1.5);
+ 
+ \draw (-1,-4) to[short] (11,-4);
+ \draw (-1,-5) to[short] (11,-5);
+ \draw (11.5,-4) to[short] (13.5,-4);
+ \draw (11.5,-5) to[short] (13.5,-5);
+ 
+ \draw (-1,-4) to[short] (-1,-5);
+ \draw (1.5,-4) to[short] (1.5,-5);
+ \draw (4,-4) to[short] (4,-5);
+ \draw (6.5,-4) to[short] (6.5,-5);
+ \draw (9,-4) to[short] (9,-5);
+ \draw (11,-4) to[short] (11,-5);
+ \draw (11.5,-4) to[short] (11.5,-5);
+ \draw (13.5,-4) to[short] (13.5,-5);
+ \draw [dashed] (11,-4) -- (11.5,-4);
+ \draw [dashed] (11,-5) -- (11.5,-5);
+ 
+ \draw [dashed] (0,-2) -- (1.5,-4);
+ \draw [dashed] (3,-2) -- (4,-4);
+ \draw [dashed] (6,-2) -- (6.5,-4);
+ \draw [dashed] (7,-2) -- (11.5,-4);
+ \draw [dashed] (10,-2) -- (13.5,-4);
+ 
+ \draw [arrows=<->] (0.03,-0.6) -- (2.97,-0.6);
+ \draw [arrows=<->] (-0.97,-3.5) -- (1.47,-3.5);
+ \draw [arrows=<->] (1.53,-3.5) -- (8.97,-3.5);
+ \draw [arrows=<->] (9.03,-3.5) -- (10.97,-3.5);
+ \draw [arrows=<->] (9.03,-5.3) -- (10.97,-5.3);
+ 
+ \draw (-2,-6) to[short] (3,-6);
+ \draw (-2,-7) to[short] (3,-7);
+ \draw (-2,-6) to[short] (-2,-7);
+ \draw (3,-6) to[short] (3,-7);
+ \draw (-0.5,-6) to[short] (-0.5,-7);
+ 
+ \draw [arrows=<->] (-2,-8) -- (13.5,-8);
+ \draw [arrows=<-] (9,-5) -- (7,-6);
+ \draw (6,-6) node(anchor=west){For modes};
+ \draw (6,-6.5) node(anchor=west){requiring pilot};
+ 
+ \draw [dashed] (-1,-5) -- (-2,-6);
+ \draw [dashed] (1.5,-5) -- (3,-6);
+ 
+ \draw (5,1.5) node(anchor=west){XFECFRAME};
+ \draw (5,1.5) node(anchor=west){XFECFRAME};
+ \draw (5,.3) node(anchor=west){S slots};
+ \draw (1.5,-0.4) node(anchor=west){90 symbols};
+ \draw (1.5,-1.5) node(anchor=west){Slot-1};
+ \draw (4.5,-1.5) node(anchor=west){Slot-2};
+ \draw (8.5,-1.5) node(anchor=west){Slot-S};
+ 
+ \draw (0.2,-3.2) node(anchor=west){1 slot ($\pi$ /2BPSK)};
+ \draw (5.25,-3.2) node(anchor=west){16 slots (selected modulation)};
+ \draw (10,-3.2) node(anchor=west){36 symbols};
+ \draw (10,-5.5) node(anchor=west){unmodulated carriers};
+ \draw (-1.2,-6.5) node(anchor=west){SOF};
+ \draw (1.3,-6.5) node(anchor=west){PLSCODE};
+ 
+ \draw (0.2,-4.5) node(anchor=west){PLHEADER};
+ \draw (0.2,-4.5) node(anchor=west){PLHEADER};
+ \draw (2.75,-4.5) node(anchor=west){Slot-1};
+ \draw (5.25,-4.5) node(anchor=west){Slot-...};
+ \draw (7.75,-4.5) node(anchor=west){Slot-16};
+ \draw (10,-4.5) node(anchor=west){Pilot block};
+ \draw (12.5,-4.5) node(anchor=west){Slot-S};
+
+ \draw (2,-8.5) node(anchor=west){PLFFRAME before PL Scrambling};
+ \draw (2,-8.5) node(anchor=west){PLFFRAME before PL Scrambling};
+ \draw (9,-8.5) node(anchor=west){90(S+1)+P int[(S-1)/16] (P=36 pilots)};
+
+
+
+
+\end{circuitikz} 
+\end{figure}
+
+
+
+\end{document}
